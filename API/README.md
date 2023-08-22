@@ -1,5 +1,84 @@
-Criar migration da pagina home do conteudo do topo
-### npx sequelize-cli migration:generate --name creat-homes-tops
+COMO RODAR O PROJETO BAIXADO
+Instalar todas as dependencias indicada pelo package.json
+### npm install
 
-Execultar migrtaions 
+Criar a base de dados "site" no MySQL
+Alterar as credencias do banco de dados no arquivo ".env"
+
+Executar as migrations
 ### npx sequelize-cli db:migrate
+
+Rodar o projeto usando o nodemon
+### nodemon app.js
+
+Abrir o endereço no navegador para acessar a página inicial
+### http://localhost:8080
+
+
+
+SEQUENCIA PARA CRIAR O PROJETO
+Criar o arquivo package
+### npm init
+
+Gerencia as requisições, rotas e URLs, entre outra funcionalidades
+### npm install --save express
+
+Instalar a dependência de forma global, "-g" significa globalmente. Executar o comando através do prompt de comando, executar somente se nunca instalou a dependência na maquina, após instalar, reiniciar o PC.
+### npm install -g nodemon
+
+Instalar a dependência como desenvolvedor para reiniciar o servidor sempre que houver alteração no código fonte.
+### npm install --save-dev nodemon
+
+Rodar o projeto usando o nodemon
+### nodemon app.js
+
+Abrir o endereço no navegador para acessar a página inicial
+### http://localhost:8080
+
+Comando SQL para criar a base de dados
+### CREATE DATABASE site CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 
+
+Sequelize é uma biblioteca Javascript que facilita o gerenciamento do banco de dados SQL
+### npm install --save sequelize
+
+Instalar o drive do banco de dados
+### npm install --save mysql2
+
+Sequelize-cli interface de linha de comando usada para criar modelos, configurações e arquivos de migração para bancos de dados
+### npm install --save-dev sequelize-cli
+
+Iniciar o Sequelize-cli e criar o arquivo config
+### npx sequelize-cli init
+
+Manipular variáveis de ambiente
+### npm install dotenv --save
+
+Criar a migration da página home do conteúdo do topo 
+### npx sequelize-cli migration:generate --name create-homes-tops
+
+Criar a migration acrescentar a coluna imageTop
+### npx sequelize-cli migration:generate --name alter-homes-tops-add-imagetop
+
+Executar as migrations
+### npx sequelize-cli db:migrate
+
+Executar down - rollback - Permite que seja desfeita a migration, permitindo a gestão das alterações do banco de dados e versionamento.
+### npx sequelize-cli db:migrate:undo --name nome-da-migration
+
+Criar a Models da página home do conteúdo do topo 
+### npx sequelize-cli model:generate --name HomesTops --attributes titleOneTop:string,titleTwoTop:string,titleThreeTop:string,linkBtnTop:string,textBtnTop:string,imageTop:string
+
+Criar seeds 
+### npx sequelize-cli seed:generate --name demo-homestops
+
+Execultar as seeds 
+### npx sequelize db:seed:all 
+
+Execultar uma unica seed
+### npx sequelize-cli db:seed --seed nome-da-seed
+
+Execultar o down - rollback desfazer todas as seeds 
+### npx sequelize-cli db:seed:undo
+
+Execultar o down - rollback desfazer uma unica seeds 
+### npx sequelize-cli db:seed:undo --seed nome-da-seed
