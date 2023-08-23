@@ -16,13 +16,33 @@ router.get("/", async (req, res) => {
 
         //acrecentar condição para indicar qual registro deve ser retornado do banco de dados 
 
-        where: { id: 3}
+        // where: { id: 3}
+    });
+
+    const homesServices = await db.HomesServices.findOne({
+        //indicar quais colunas qrecuperar 
+        attributes: ['servTitle','servIconOne','servTitleOne','servDescOne','servIconTwo','servTitleTwo',
+        'servDescTwo','servIconThree','servTitleThree','servDescThree'],
+
+        //acrecentar condição para indicar qual registro deve ser retornado do banco de dados 
+
+        // where: { id: 1}
+    });
+    const homesPremiums = await db.HomesPremiums.findOne({
+        //indicar quais colunas qrecuperar 
+        attributes: ['premTitle','premSubtitle','premDesc','premBtn_text','premBtn_link','premImage'],
+
+        //acrecentar condição para indicar qual registro deve ser retornado do banco de dados 
+
+        // where: { id: 1}
     });
     //console.log(homesTops)
-    if(homesTops) {
+    if((homesTops) && (homesServices) && (homesPremiums)) {
         return res.json({
             error: false,
-            homesTops
+            homesTops,
+            homesServices,
+            homesPremiums
         });
     }else{
         return res.status(400).json({

@@ -82,3 +82,9 @@ Execultar o down - rollback desfazer todas as seeds
 
 Execultar o down - rollback desfazer uma unica seeds 
 ### npx sequelize-cli db:seed:undo --seed nome-da-seed
+
+Criar a Models da página home do conteúdo dos serviços 
+### npx sequelize-cli model:generate --name HomesServices --attributes servTitle:string,servIconOne:string,servTitleOne:string,servDescOne:string,servIconTwo:string,servTitleTwo:string,servDescTwo:string,servIconThree:string,servTitleThree:string,servDescThree:string
+
+Criar a Models da página home do conteúdo do serviço premium 
+### npx sequelize-cli model:generate --name HomesPremiums --attributes premTitle:string,premSubtitle:string,premDesc:text,premBtn_text:string,premBtn_link:string,premImage:string
