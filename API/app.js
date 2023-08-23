@@ -9,10 +9,12 @@ const db = require("./db/models");
 
 //incluir as controlles
 const home = require("./controllers/home");
+const aboutsCompanies = require("./controllers/aboutsCompanies")
 const contactMenssage = require("./controllers/contactMenssage");
 
 //criar rotas
 app.use('/home', home);
+app.use('/about-companies', aboutsCompanies)
 app.use('/contact-message', contactMenssage);
 
 

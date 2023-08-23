@@ -88,3 +88,19 @@ Criar a Models da página home do conteúdo dos serviços
 
 Criar a Models da página home do conteúdo do serviço premium 
 ### npx sequelize-cli model:generate --name HomesPremiums --attributes premTitle:string,premSubtitle:string,premDesc:text,premBtn_text:string,premBtn_link:string,premImage:string
+
+Criar seeders
+### npx sequelize-cli seed:generate --name demo-homespremiums
+
+Criar a Models da situação 
+### npx sequelize-cli model:generate --name SituationsAbouts --attributes nameSituation:string
+
+Criar seeders
+### npx sequelize-cli seed:generate --name demo-situationsabouts
+
+Criar a Models da página sobre empresa
+### npx sequelize-cli model:generate --name AboutsCompanies --attributes title:string,description:text,image:text,situationAboutId:integer
+
+Criar seeders
+### npx sequelize-cli seed:generate --name demo-aboutscompanies
+
