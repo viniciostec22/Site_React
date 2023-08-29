@@ -19,7 +19,8 @@ module.exports = {
         type: Sequelize.TEXT
       },
       situationAboutId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.DataTypes.INTEGER,
+        references: {model: 'SituationsAbouts', key: 'id'}
       },
       createdAt: {
         allowNull: false,

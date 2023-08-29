@@ -14,6 +14,12 @@ router.get("/", async (req, res) => {
         //indicar quais colunas qrecuperar 
         attributes: ['id','title','description','image','situationAboutId'],
 
+        //buscar dados na tabela secundaria 
+        include:[{
+            model:db.SituationsAbouts,
+            attributes:['nameSituation']
+        }],
+
         //ordeenar os rgistros pela coluna id na forma decreescente
         order:[['id', 'DESC']],
 

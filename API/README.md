@@ -104,3 +104,5 @@ Criar a Models da página sobre empresa
 Criar seeders
 ### npx sequelize-cli seed:generate --name demo-aboutscompanies
 
+Criar a Models da página contato do conteúdo texto 
+### npx sequelize-cli model:generate --name ContentsContacts --attributes titleContact:string,descContact:string,iconCompany:string,titleCompany:string,descCompany:string,iconAddress:string,titleAddress:string,descAddress:string,iconEmail:string,titleEmail:string,descEmail:string,titleForm:string
